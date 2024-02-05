@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Software</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .Top{
+
+            background-color: rgb(201, 255, 237);
+            color: black;
+            text-align: center;
+        }
+        #one:hover{
+            background-color: aquamarine;
+            color: black;
+            transition-delay: 0s;
+            transition-duration: 0.5s;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid pt-3 bg-dark text-white " >
+        <div  class="Top">
+            <h1>
+                Suppliers Data Info
+            </h1>
+            <p>
+            Please enter data carefully without commit a single mistake.
+            </p>
+        </div>
+        <div class="row m-3" id="one"> 
+            <h6 class="col sm-3">
+                <small>
+                    Date:
+                </small>
+            </h6>
+            <input type="date" placeholder="Enter date" class="col sm-3">
+        </div>
+        <div class="row m-3 "  id="one">
+            <h6 class="col sm-3" >
+               <small>
+                    File Reference Number:
+               </small>
+            </h6>
+            <input type="text" name="Reference_number" id="text" placeholder="Enter reference number" class="col sm-3 mr-3">
+        </div>
+        <div class="row m-3"  id="one">
+            <h6 class="col sm-3" >
+                <small>
+                    Product Name:
+                </small>
+            </h6>
+            <input type="text" name="Product_name" id="text" placeholder="Enter product name " class="col sm-3">
+        </div>
+        <div class="row m-3"  id="one">
+            <h6 class="col sm-3">
+                <small>
+                   Supplier Name:
+                </small>
+            </h6>
+            <input type="text" name="Suppliers_name" id="text" placeholder="Enter supplier name" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    Product specifications:
+                </small>
+            </h6>
+            <input type="text" name="Product_Specs" id="text" placeholder="Enter product specifications" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    Brand Names:
+                </small>
+            </h6>
+            <input type="text" placeholder="Enter brand name" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    Extra Products Provided:
+                </small>
+            </h6>
+            <input type="text" placeholder="Enter extra products" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    Email Address:
+                </small>
+            </h6>
+            <input type="email" placeholder="Enter email address" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    URL Address:
+                </small>
+            </h6>
+            <input type="url" placeholder="Enter URL address" class="col sm-3">
+        </div>
+        <div class="row m-3" id="one">
+            <h6 class="col sm-3">
+                <small>
+                    Location:
+                </small>
+            </h6>
+            <input type="text" name="Address" id="text" placeholder="Enter supplier address" class="col sm-3">
+        </div>
+        <div class="row m-3 "  id="one">
+            <h6 class="col sm-3" >
+               <small>
+                    Attached Files:
+               </small>
+            </h6>
+            <input type="file" name="file" id="file" placeholder="Attach the file" class="col sm-3 mr-3">
+        </div>
+        <div class="row m-3">
+            <button style="color: black; background-color: yellow; border: 1px solid black; padding: 5px;" >Submit</button>
+        </div>
+    </div>
+</body>
+</html>

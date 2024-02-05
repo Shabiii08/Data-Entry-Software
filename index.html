@@ -28,64 +28,64 @@
 
 
 
-  <div class="container-fluid pt-3 bg-dark text-white">
+  <div class="container-fluid pt-3 bg-dark text-white pb-3">
     <div class="Top">
       <h1>Suppliers Data Info</h1>
-      <p>Please enter data carefully without commit a single mistake.</p>
+      <p>Please input data with great care, avoiding any mistakes. Thank you.</p>
     </div>
-    <form action="savedata.php" method="post">
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Supplier Name:</label>
-        <input type="text" name="suppliers_name" placeholder="Enter supplier name"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Brand Names:</label>
-        <input type="text" name="brand_name" placeholder="Enter brand name"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Email Address:</label>
-        <input type="email" name="email" placeholder="Enter email address"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">File Reference Number:</label>
-        <input type="text" name="reference_number" placeholder="Enter reference number"
-          class="col sm-3 mr-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Product Name:</label>
-        <input type="text" name="product_name" placeholder="Enter product name "
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Product specifications:</label>
-        <input type="text" name="product_specs" placeholder="Enter product specifications"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Extra Products Provided:</label>
-        <input type="text" name="extra_products" placeholder="Enter extra products"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">URL Address:</label>
-        <input type="url" name="url" placeholder="Enter URL address" class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Address:</label>
-        <input type="text" name="address" placeholder="Enter supplier address"
-          class="col sm-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3" class="input-group">
-        <label class="col sm-3">Attached Files:</label>
-        <input type="file" name="file" id="file" placeholder="Attach the file"
-          class="col sm-3 mr-3 form-control bg-dark text-white" />
-      </div>
-      <div class="row m-3">
-        <button class="btn btn-success" type="submit">Submit</button>
-      </div>
+    <form action="savedata.php" method="post" enctype="multipart/form-data">
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Supplier Name:</label>
+      <input type="text" name="suppliers_name" placeholder="Enter supplier name"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Brand Names:</label>
+      <input type="text" name="brand_name" placeholder="Enter brand name"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Email Address:</label>
+      <input type="email" required name="email" placeholder="Enter email address"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">File Reference Number:</label>
+      <input type="text" name="reference_number" placeholder="Enter reference number"
+        class="col sm-3 mr-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Product Name:</label>
+      <input type="text" name="product_name" placeholder="Enter product name "
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Product specifications:</label>
+      <input type="text" name="product_specs" placeholder="Enter product specifications"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Extra Products Provided:</label>
+      <input type="text" name="extra_products" placeholder="Enter extra products"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">URL Address:</label>
+      <input type="url" name="url" placeholder="Enter URL address" class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Address:</label>
+      <input type="text" name="address" placeholder="Enter supplier address"
+        class="col sm-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3" class="input-group">
+      <label class="col sm-3">Attached Files:</label>
+      <input type="file" name="myfile" id="myfile" placeholder="Attach the file"
+        class="col sm-3 mr-3 form-control bg-dark text-white" />
+    </div>
+    <div class="row m-3">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
     </form>
   </div>
 </body>

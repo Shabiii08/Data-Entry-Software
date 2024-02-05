@@ -12,6 +12,8 @@
 <body>
 
 
+  <!--==================== nav bar ( START ) =========================-->
+
   <nav class="navbar navbar-expand bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Data Entry</a>
@@ -27,6 +29,11 @@
       </div>
     </div>
   </nav>
+  <!--==================== nav bar  ( END )  =========================-->
+
+
+  <!--==================== search bar ( START ) ===========================-->
+
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="container-fluid bg-dark py-2">
       <select name="data_type" class="form-select bg-dark text-white my-2" aria-label="Default select example">
@@ -41,13 +48,17 @@
         <option value="url">URL</option>
         <option value="address">Address</option>
         <option value="date">Date</option>
+        <option value="file_url">File Url</option>
       </select>
-      <input name="data" class="form-control bg-dark text-white my-2" type="search" name="Search"
+      <input autofocus name="data" class="form-control bg-dark text-white my-2" type="search" name="Search"
         placeholder="Search here">
       <button class="btn btn-success w-100" type="submit">Search</button>
     </div>
   </form>
+  <!--==================== search bar  ( END )  ===========================-->
 
+
+  <!--==================== Data Table ( START ) ==========================-->
 
   <hr class="m-0">
   <table class="table table-striped table-dark">
@@ -64,12 +75,14 @@
         <th scope="col">URL</th>
         <th scope="col">Address</th>
         <th scope="col">Date</th>
+        <th scope="col">File Url</th>
       </tr>
     </thead>
     <tbody>
       <?php
       include './dbconnect.php';
 
+      //==================== show searched data ( START ) ===========================
       if (isset($_POST['data']) && isset($_POST['data_type'])) {
         $data = $_POST['data'];
         $data_type = $_POST['data_type'];
@@ -84,7 +97,7 @@
         $count = 1;
         while ($row = mysqli_fetch_assoc($result)) {
           echo '<tr>
-                  <th scope="row">' . $count . '</th>
+          <th scope="row">' . $count . '</th>
                   <td>' . $row['suppliers_name'] . '</td>
                   <td>' . $row['brand_name'] . '</td>
                   <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
@@ -95,12 +108,15 @@
                   <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
                   <td>' . $row['address'] . '</td>
                   <td>' . $row['Date'] . '</td>
+                  <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
                   ';
+          //==================== show searched data  ( END )  ===========================
         }
       } else {
 
 
-
+        //==================== Show all data ( START ) ===========================
+      
         $sql = "SELECT * FROM `suppliers`";
         $result = mysqli_query($conn, $sql);
         $count = 1;
@@ -117,14 +133,17 @@
                 <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
                 <td>' . $row['address'] . '</td>
                 <td>' . $row['Date'] . '</td>
-              </tr>';
+                <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+                </tr>';
           $count++;
         }
         mysqli_close($conn);
       }
+      //==================== Show all data  ( END )  ===========================
       ?>
     </tbody>
   </table>
+  <!--==================== Data Table  ( END )  ==========================-->
 </body>
 
 </html>

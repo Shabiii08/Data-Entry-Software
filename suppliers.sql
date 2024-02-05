@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2024 at 01:14 PM
+-- Generation Time: Feb 05, 2024 at 03:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `suppliers` (
+  `No` int(11) NOT NULL,
   `suppliers_name` varchar(100) NOT NULL,
   `brand_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -38,17 +39,16 @@ CREATE TABLE `suppliers` (
   `url` varchar(200) NOT NULL,
   `address` varchar(150) NOT NULL,
   `Date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `No` int(11) NOT NULL
+  `file_url` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `suppliers`
 --
 
-INSERT INTO `suppliers` (`suppliers_name`, `brand_name`, `email`, `reference_number`, `product_name`, `product_specs`, `extra_products`, `url`, `address`, `Date`, `No`) VALUES
-('Tayyab Riaz', 'Tayyab Brand', 'mrtayyabriaz@gmail.com', '12345', 'produce name', 'produce specs', 'ext pro', 'https://mrtayyabriaz.netlify.app', 'Chichawatni', '2024-02-05 11:08:09', 1),
-('ali', 's', 'aa@gmail.com', 's', 's', 's', 's', 'https://www.efgh.com/', 's', '2024-02-05 11:41:52', 9),
-('Sohaib', 'Sohaib', 'ab@gmail.com', 'Sohaib', 'Sohaib', 's', 's', 'https://www.abcd.com/', 's', '2024-02-05 11:42:32', 10);
+INSERT INTO `suppliers` (`No`, `suppliers_name`, `brand_name`, `email`, `reference_number`, `product_name`, `product_specs`, `extra_products`, `url`, `address`, `Date`, `file_url`) VALUES
+(1, 'Tayyab Riaz', 'Tayyab Brand', 'mrtayyabriaz@gmail.com', '12345', 'produce name', 'produce specs', 'ext pro', 'https://mrtayyabriaz.netlify.app', 'Chichawatni', '2024-02-05 11:08:09', ''),
+(10, 'Sohaib', 'Sohaib', 'ab@gmail.com', 'Sohaib', 'Sohaib', 's', 's', 'https://www.abcd.com/', 's', '2024-02-05 11:42:32', '');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +68,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

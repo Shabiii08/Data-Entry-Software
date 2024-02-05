@@ -19,7 +19,7 @@
             <a class="nav-link active" aria-current="page" href="index.html">Add</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="Datashow.html">Search</a>
+            <a class="nav-link active" href="Datashow.php">Search</a>
           </li>
         </ul>
       </div>
@@ -33,19 +33,21 @@
       <h1>Suppliers Data Info</h1>
       <p>Please enter data carefully without commit a single mistake.</p>
     </div>
-    <form action="" method="post">
+    <form action="savedata.php" method="post">
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Supplier Name:</label>
         <input type="text" name="suppliers_name" placeholder="Enter supplier name"
           class="col sm-3 form-control bg-dark text-white" />
-        </div>
+      </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Brand Names:</label>
-        <input type="text" name="brand_name" placeholder="Enter brand name" class="col sm-3 form-control bg-dark text-white" />
+        <input type="text" name="brand_name" placeholder="Enter brand name"
+          class="col sm-3 form-control bg-dark text-white" />
       </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Email Address:</label>
-        <input type="email" name="email" placeholder="Enter email address" class="col sm-3 form-control bg-dark text-white" />
+        <input type="email" name="email" placeholder="Enter email address"
+          class="col sm-3 form-control bg-dark text-white" />
       </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">File Reference Number:</label>
@@ -64,7 +66,8 @@
       </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Extra Products Provided:</label>
-        <input type="text" name="extra_products" placeholder="Enter extra products" class="col sm-3 form-control bg-dark text-white" />
+        <input type="text" name="extra_products" placeholder="Enter extra products"
+          class="col sm-3 form-control bg-dark text-white" />
       </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">URL Address:</label>
@@ -73,12 +76,12 @@
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Address:</label>
         <input type="text" name="address" placeholder="Enter supplier address"
-        class="col sm-3 form-control bg-dark text-white" />
+          class="col sm-3 form-control bg-dark text-white" />
       </div>
       <div class="row m-3" class="input-group">
         <label class="col sm-3">Attached Files:</label>
         <input type="file" name="file" id="file" placeholder="Attach the file"
-        class="col sm-3 mr-3 form-control bg-dark text-white" />
+          class="col sm-3 mr-3 form-control bg-dark text-white" />
       </div>
       <div class="row m-3">
         <button class="btn btn-success" type="submit">Submit</button>

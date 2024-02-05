@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.Top{
+  background-color: rgb(0, 157, 154);
+  color: black;
+  text-align: center;
+}
+#one:hover{
+  background-color: aquamarine;
+  color: black;
+  transition-delay: 0s;
+  transition-duration: 0.5s;
+}
+.form-control::placeholder{
+  color: white;
+}

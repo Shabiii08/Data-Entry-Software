@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="background-color:rgb(33, 37, 41)">
 
 
   <!--==================== nav bar ( START ) =========================-->
@@ -49,6 +49,9 @@
         <option value="address">Address</option>
         <option value="date">Date</option>
         <option value="file_url">File Url</option>
+        <option value="NumberA">Number_1</option>
+        <option value="NumberB">Number_2</option>
+        <option value="NumberC">Number_3</option>
       </select>
       <input autofocus name="data" class="form-control bg-dark text-white my-2" type="search" name="Search"
         placeholder="Search here">
@@ -67,14 +70,12 @@
         <th scope="col">#</th>
         <th scope="col">Supplier Name</th>
         <th scope="col">Brand Names</th>
-        <th scope="col">Email</th>
         <th scope="col">File Reference Number</th>
         <th scope="col">Product Name</th>
         <th scope="col">Product specifications</th>
         <th scope="col">Extra Products</th>
-        <th scope="col">URL</th>
+        <th scope="col">Date</th>
         <th scope="col">Address</th>
-        <th scope="col">File Url</th>
       </tr>
     </thead>
     <tbody>
@@ -99,29 +100,29 @@
                   <td scope="row">' . $count . '</td>
                   <td>' . $row['suppliers_name'] . '</td>
                   <td>' . $row['brand_name'] . '</td>
-                  <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
                   <td>' . $row['reference_number'] . '</td>
                   <td>' . $row['product_name'] . '</td>
                   <td>' . $row['product_specs'] . '</td>
                   <td>' . $row['extra_products'] . '</td>
-                  <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+                  <td>' . $row['date'] . '</td>
                   <td>' . $row['address'] . '</td>
                   <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
                 </tr>
                 
                 
                 <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <th colspan="2">Number_1</th>
+                <th colspan="2">Numbers</th>
                 <td>' . $row['NumberA'] . '</td>
-                <th>Number_2</th>
                 <td>' . $row['NumberB'] . '</td>
-                <th>Number_3</th>
                 <td>' . $row['NumberC'] . '</td>
-                <th>Date</th>
-                <td>' . $row['Date'] . '</td>
-                </tr>
-                ';
 
+              <th>E Mail</th>
+              <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
+              <th>URL</th>
+                <td><a  href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+            </tr>
+                ';
+                $count++;
           //==================== show searched data  ( END )  ===========================
         }
       } else {
@@ -138,26 +139,24 @@
               <th scope="row">' . $count . '</th>
               <td>' . $row['suppliers_name'] . '</td>
               <td>' . $row['brand_name'] . '</td>
-              <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
               <td>' . $row['reference_number'] . '</td>
               <td>' . $row['product_name'] . '</td>
               <td>' . $row['product_specs'] . '</td>
               <td>' . $row['extra_products'] . '</td>
-              <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+              <td>' . $row['Date'] . '</td>
               <td>' . $row['address'] . '</td>
-              <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
-            </tr>
-
-            <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-
-              <th colspan="2">Number_1</th>
-                <td>' . $row['NumberA'] . '</td>
-              <th>Number_2</th>
-                <td>' . $row['NumberB'] . '</td>
-              <th>Number_3</th>
-                <td>' . $row['NumberC'] . '</td>
-              <th>Date</th>
-                <td>' . $row['Date'] . '</td>
+              </tr>
+              
+              <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              
+              <th colspan="2">Numbers: </th>
+              <td>' . $row['NumberA'] . '</td>
+              <td>' . $row['NumberB'] . '</td>
+              <td>' . $row['NumberC'] . '</td>
+              <th>E-Mail: </th>
+              <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
+              <td>URL: <a  href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+              <td>File: <a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
             </tr>';
 
           $count++;

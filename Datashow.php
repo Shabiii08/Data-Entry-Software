@@ -76,6 +76,9 @@
         <th scope="col">Address</th>
         <th scope="col">Date</th>
         <th scope="col">File Url</th>
+        <th scope="col">Number A</th>
+        <th scope="col">Number B</th>
+        <th scope="col">Number C</th>
       </tr>
     </thead>
     <tbody>
@@ -109,6 +112,9 @@
                   <td>' . $row['address'] . '</td>
                   <td>' . $row['Date'] . '</td>
                   <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+                  <td>' . $row['NumberA'] . '</td>
+                  <td>' . $row['NumberB'] . '</td>
+                  <td>' . $row['NumberB'] . '</td>
                   ';
           //==================== show searched data  ( END )  ===========================
         }
@@ -134,7 +140,11 @@
                 <td>' . $row['address'] . '</td>
                 <td>' . $row['Date'] . '</td>
                 <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+                <td>' . $row['NumberA'] . '</td>
+                <td>' . $row['NumberB'] . '</td>
+                <td>' . $row['NumberB'] . '</td>
                 </tr>';
+          // echo '';
           $count++;
         }
         mysqli_close($conn);

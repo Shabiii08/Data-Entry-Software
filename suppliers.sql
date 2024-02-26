@@ -74,3 +74,11 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ 
+/*==================================================================================
+=================================== adding numbers ( START ) =======================
+==================================================================================*/ 
+ALTER TABLE `suppliers` ADD `Number A` VARCHAR(20) NOT NULL AFTER `file_url`, ADD `Number B` VARCHAR(20) NOT NULL AFTER `Number A`, ADD `Number C` VARCHAR(20) NOT NULL AFTER `Number B`;
+/*==================================================================================
+=================================== adding numbers  ( END )  =======================
+==================================================================================*/

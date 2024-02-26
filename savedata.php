@@ -37,13 +37,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $extra_products = test_input($_POST["extra_products"]);
   $url = test_input($_POST["url"]);
   $address = test_input($_POST["address"]);
+  $NumberA = test_input($_POST['NumberA']);
+  $NumberB = test_input($_POST['NumberB']);
+  $NumberC = test_input($_POST['NumberC']);
+
 
 
   if ($email) {
     // if ($suppliers_name && $brand_name && $email && $reference_number && $product_name && $product_specs && $extra_products && $url && $address) {
     // echo add data 
-    $sql = "INSERT INTO `suppliers` (`suppliers_name`, `brand_name`, `email`, `reference_number`, `product_name`, `product_specs`, `extra_products`, `url`, `address`, `Date`,`file_url`) 
-                          VALUES ('$suppliers_name', '$brand_name', '$email', '$reference_number', '$product_name', '$product_specs', '$extra_products', '$url', '$address', current_timestamp(), '');";
+    $sql = "INSERT INTO `suppliers` (`suppliers_name`, `brand_name`, `email`, `reference_number`, `product_name`, `product_specs`, `extra_products`, `url`, `address`,`NumberA`,`NumberB`,`NumberC`, `Date`,`file_url`) 
+                          VALUES ('$suppliers_name', '$brand_name', '$email', '$reference_number', '$product_name', '$product_specs', '$extra_products', '$url', '$address','$NumberA','$NumberB','$NumberC', current_timestamp(), '');";
     $result = mysqli_query($conn, $sql);
     if ($result) {
       echo "Data Saved successfully. 

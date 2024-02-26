@@ -74,11 +74,7 @@
         <th scope="col">Extra Products</th>
         <th scope="col">URL</th>
         <th scope="col">Address</th>
-        <th scope="col">Date</th>
         <th scope="col">File Url</th>
-        <th scope="col">Number A</th>
-        <th scope="col">Number B</th>
-        <th scope="col">Number C</th>
       </tr>
     </thead>
     <tbody>
@@ -99,8 +95,8 @@
         $result = mysqli_query($conn, $sql);
         $count = 1;
         while ($row = mysqli_fetch_assoc($result)) {
-          echo '<tr>
-          <th scope="row">' . $count . '</th>
+          echo ' <tr class="collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapse' . $count . '" aria-expanded="false" aria-controls="flush-collapse' . $count . '">
+                  <td scope="row">' . $count . '</td>
                   <td>' . $row['suppliers_name'] . '</td>
                   <td>' . $row['brand_name'] . '</td>
                   <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
@@ -110,12 +106,22 @@
                   <td>' . $row['extra_products'] . '</td>
                   <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
                   <td>' . $row['address'] . '</td>
-                  <td>' . $row['Date'] . '</td>
                   <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
-                  <td>' . $row['NumberA'] . '</td>
-                  <td>' . $row['NumberB'] . '</td>
-                  <td>' . $row['NumberB'] . '</td>
-                  ';
+                </tr>
+                
+                
+                <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <th>Number_1</th>
+                <td>' . $row['NumberA'] . '</td>
+                <th>Number_2</th>
+                <td>' . $row['NumberB'] . '</td>
+                <th>Number_3</th>
+                <td>' . $row['NumberC'] . '</td>
+                <th>Date</th>
+                <td>' . $row['Date'] . '</td>
+                </tr>
+                ';
+
           //==================== show searched data  ( END )  ===========================
         }
       } else {
@@ -127,26 +133,36 @@
         $result = mysqli_query($conn, $sql);
         $count = 1;
         while ($row = mysqli_fetch_assoc($result)) {
-          echo '<tr>
-                <th scope="row">' . $count . '</th>
-                <td>' . $row['suppliers_name'] . '</td>
-                <td>' . $row['brand_name'] . '</td>
-                <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
-                <td>' . $row['reference_number'] . '</td>
-                <td>' . $row['product_name'] . '</td>
-                <td>' . $row['product_specs'] . '</td>
-                <td>' . $row['extra_products'] . '</td>
-                <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
-                <td>' . $row['address'] . '</td>
-                <td>' . $row['Date'] . '</td>
-                <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+          echo '
+            <tr class="collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapse' . $count . '" aria-expanded="false" aria-controls="flush-collapse' . $count . '">
+              <th scope="row">' . $count . '</th>
+              <td>' . $row['suppliers_name'] . '</td>
+              <td>' . $row['brand_name'] . '</td>
+              <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
+              <td>' . $row['reference_number'] . '</td>
+              <td>' . $row['product_name'] . '</td>
+              <td>' . $row['product_specs'] . '</td>
+              <td>' . $row['extra_products'] . '</td>
+              <td><a href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+              <td>' . $row['address'] . '</td>
+              <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+            </tr>
+
+            <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+
+              <th>Number_1</th>
                 <td>' . $row['NumberA'] . '</td>
+              <th>Number_2</th>
                 <td>' . $row['NumberB'] . '</td>
-                <td>' . $row['NumberB'] . '</td>
-                </tr>';
-          // echo '';
+              <th>Number_3</th>
+                <td>' . $row['NumberC'] . '</td>
+              <th>Date</th>
+                <td>' . $row['Date'] . '</td>
+            </tr>';
+
           $count++;
         }
+        echo '</div>';
         mysqli_close($conn);
       }
       //==================== Show all data  ( END )  ===========================
@@ -154,6 +170,10 @@
     </tbody>
   </table>
   <!--==================== Data Table  ( END )  ==========================-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

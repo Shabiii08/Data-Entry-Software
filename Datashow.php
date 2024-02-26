@@ -111,7 +111,7 @@
                 
                 
                 <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <th>Number_1</th>
+                <th colspan="2">Number_1</th>
                 <td>' . $row['NumberA'] . '</td>
                 <th>Number_2</th>
                 <td>' . $row['NumberB'] . '</td>
@@ -150,7 +150,7 @@
 
             <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 
-              <th>Number_1</th>
+              <th colspan="2">Number_1</th>
                 <td>' . $row['NumberA'] . '</td>
               <th>Number_2</th>
                 <td>' . $row['NumberB'] . '</td>

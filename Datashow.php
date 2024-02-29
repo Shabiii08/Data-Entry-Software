@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataShowing Page</title>
+  <title>Show Data</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,22 +13,7 @@
 
 
   <!--==================== nav bar ( START ) =========================-->
-
-  <nav class="navbar navbar-expand bg-dark" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Data Entry</a>
-      <div class="" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Add</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="Datashow.php">Search</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include 'nevbar.php'; ?>
   <!--==================== nav bar  ( END )  =========================-->
 
 
@@ -106,22 +91,21 @@
                   <td>' . $row['extra_products'] . '</td>
                   <td>' . $row['date'] . '</td>
                   <td>' . $row['address'] . '</td>
-                  <td><a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
-                </tr>
+                  </tr>
                 
                 
                 <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <th colspan="2">Numbers</th>
-                <td>' . $row['NumberA'] . '</td>
-                <td>' . $row['NumberB'] . '</td>
-                <td>' . $row['NumberC'] . '</td>
-
-              <th>E Mail</th>
+               
+              <th colspan="2">Numbers: </th>
+              <td>' . $row['NumberA'] . '</td>
+              <td>' . $row['NumberB'] . '</td>
+              <td>' . $row['NumberC'] . '</td>
+              <th>E-Mail: </th>
               <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
-              <th>URL</th>
-                <td><a  href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
-            </tr>
-                ';
+              <td>URL: <a  href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
+              <td>File: <a href = ' . $row['file_url'] . ' target = "_blank">' . $row['file_url'] . '</a></td>
+            </tr>';
+                
                 $count++;
           //==================== show searched data  ( END )  ===========================
         }
@@ -150,9 +134,9 @@
               <tr id="flush-collapse' . $count . '" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
               
               <th colspan="2">Numbers: </th>
-              <td>' . $row['NumberA'] . '</td>
-              <td>' . $row['NumberB'] . '</td>
-              <td>' . $row['NumberC'] . '</td>
+              <td><a href = tel:' . $row['NumberA'] . '>' . $row['NumberA'] . '</a></td>
+              <td><a href = tel:' . $row['NumberB'] . '>' . $row['NumberB'] . '</a></td>
+              <td><a href = tel:' . $row['NumberC'] . '>' . $row['NumberC'] . '</a></td>
               <th>E-Mail: </th>
               <td><a href = mailto:' . $row['email'] . ' target = "_blank">' . $row['email'] . '</a></td>
               <td>URL: <a  href = ' . $row['url'] . ' target = "_blank">' . $row['url'] . '</a></td>
